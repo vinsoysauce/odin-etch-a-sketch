@@ -4,43 +4,33 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: azure;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-#container {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-}
-
-#box {
-    width: 600px;
-    height: 600px;
-    border: 1px dashed black ;
-}
-
-#buttons {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 20px;
 }
 
-#range-container {
+#box-container {
+    width: 600px;
+    height: 600px;
+    border: 1px solid cornflowerblue ;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: 50px;  
 }
 
-#slider {
-    width: 300px;
-}
-
-#clear {
+button {
     width: 80px;
-    height: 30px;   
+    height: 40px; 
+    background-color:cornflowerblue;
+    border-style: hidden;
+    color: white;
 }
 
