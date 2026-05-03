@@ -1,15 +1,7 @@
 const box = document.getElementById('box-container');
-// BUTTONS
+// BUTTON DOMS
 const grid = document.getElementById('grid')
 const clear = document.getElementById('clear');
-
-grid.addEventListener('click', () => {
-    clearGrid()
-    let numOfSquares = +prompt('Enter a number not more than 100');
-    setGrid(numOfSquares)
-})
-
-
 
 function setGrid(num) {
     for (let i = 1; i <= num; i++) {
@@ -33,3 +25,14 @@ function setGrid(num) {
 function clearGrid() {
     box.textContent = '';
 }
+
+// BUTTON EVENT LISTENERS
+grid.addEventListener('click', () => {
+    clearGrid()
+    let numOfSquares = +prompt('Enter a number not more than 100');
+    setGrid(numOfSquares)
+})
+
+clear.addEventListener('click', () => clearGrid())
+
+setGrid(16)
