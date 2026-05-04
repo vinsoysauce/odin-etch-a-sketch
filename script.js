@@ -56,7 +56,7 @@ function clearGrid() {
 // CHECK VALID INPUT FUNCTIONS
 
 function checkInput(num) {
-    if (num == '' || num > 100 || num < 1) {
+    if (num == '' || num > 100 || num < 1 || isNaN(num)) {
         alert('Invalid value! will set it to 16x16!')
         return 16
     }
