@@ -33,14 +33,7 @@ const makeSquares = (num, object) => {
     }
 }
 
-function checkInput(num) {
-    if (num < 1 || num > 100) {
-        alert('Invalid value! will set it to 16x16!')
-        num = 16
-    }
-    return num
-}
-
+// GRID COLOR FUNCTIONS
 function darkenColor(squares) {
     let num = 0.10;
     squares.addEventListener('mouseover', (event) => {
@@ -60,12 +53,22 @@ function clearGrid() {
     box.textContent = ''
 }
 
+// CHECK VALID INPUT FUNCTIONS
+
+function checkInput(num) {
+    if (num == '' || num > 100 || num < 1) {
+        alert('Invalid value! will set it to 16x16!')
+        return 16
+    }
+    return num
+}
+
 // BUTTON EVENT LISTENER
 grid.addEventListener('click', () => {
     clearGrid()
-    let num = +prompt('Enter a number not more than 100 and not less than 1');
+    num = prompt('Enter a number not more than 100 and not less than 1');
+    num = checkInput(num)
     setGrid(num)
 })
-
 
 setGrid(16)
