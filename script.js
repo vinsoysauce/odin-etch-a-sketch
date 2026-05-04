@@ -17,13 +17,16 @@ function setGrid(num) {
         squares.style.width = 'auto'
         squares.style.height = 'auto'
         squares.style.flexGrow = '1';
+        squares.addEventListener('mouseover', (event) => {
+            squares.style.background = 'blue';
+        })
         rectangle.appendChild(squares)
     } 
 }
 }
 
 function clearGrid() {
-    box.textContent = '';
+    box.textContent = ''
 }
 
 // BUTTON EVENT LISTENERS
