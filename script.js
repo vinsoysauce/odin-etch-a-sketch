@@ -2,8 +2,8 @@ const box = document.getElementById('box-container');
 // BUTTON DOMS
 const grid = document.getElementById('grid')
 const clear = document.getElementById('clear');
-let colors = ['#caf0f8', '#ade8f4', '#90e0ef', 
-              '#48cae4', '#00b4d8', '#0096c7'];
+const color = ['red', 'orange', 'yellow', 'green',
+               'blue', 'indigo', 'violet'];
 
 
 function setGrid(num) {
@@ -25,15 +25,24 @@ function setGrid(num) {
         squares.style.height = 'auto'
         squares.style.flexGrow = '1';
         randomColor(squares)
+        darkenColor(squares)
         rectangle.appendChild(squares)
     } 
 }
 }
 
-function randomColor(squares) {
-    let randomColor = Math.round(Math.random() * 6)
+function darkenColor(squares) {
+    let num = 0.10;
     squares.addEventListener('mouseover', (event) => {
-        squares.style.background = colors[randomColor];
+        num += 0.10
+        squares.style.opacity = num;
+    })
+}
+
+function randomColor(square) {
+    let random = Math.floor(Math.random() * 6)
+    square.addEventListener('mouseover', (event) => {
+        square.style.backgroundColor = color[random];
     })
 }
 
