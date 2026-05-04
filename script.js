@@ -1,3 +1,4 @@
+// CONTAINER DOM
 const box = document.getElementById('box-container');
 // BUTTON DOMS
 const grid = document.getElementById('grid')
@@ -7,10 +8,7 @@ const color = ['red', 'orange', 'yellow', 'green',
 
 
 function setGrid(num) {
-    if (num < 1 || num > 100) {
-        alert('Invalid value! will set it to 16x16!')
-        num = 16
-    }
+    checkInput(num)
     for (let i = 1; i <= num; i++) {
         const rectangle = document.createElement('div');
         rectangle.style.display = 'flex';
@@ -29,6 +27,14 @@ function setGrid(num) {
         rectangle.appendChild(squares)
     } 
 }
+}
+
+function checkInput(num) {
+    if (num < 1 || num > 100) {
+        alert('Invalid value! will set it to 16x16!')
+        num = 16
+    }
+    return num
 }
 
 function darkenColor(squares) {
@@ -50,7 +56,7 @@ function clearGrid() {
     box.textContent = ''
 }
 
-// BUTTON EVENT LISTENERS
+// BUTTON EVENT LISTENER
 grid.addEventListener('click', () => {
     clearGrid()
     let num = +prompt('Enter a number not more than 100 and not less than 1');
