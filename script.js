@@ -6,27 +6,31 @@ const clear = document.getElementById('clear');
 const color = ['red', 'orange', 'yellow', 'green',
                'blue', 'indigo', 'violet'];
 
-
+// SET GRID, COLUMNS, SQUARES FUNCTIONS
 function setGrid(num) {
     checkInput(num)
+    makeColumns(num)
+}
+
+const makeColumns = (num) => {
     for (let i = 1; i <= num; i++) {
         const rectangle = document.createElement('div');
         rectangle.style.display = 'flex';
         rectangle.style.flexDirection = 'column';
         rectangle.style.flex = '1';
-        rectangle.style.flexWrap = 'wrap';
         box.appendChild(rectangle);
-    for (let j = 1; j <= num; j++) {
-        const squares = document.createElement('div')
-        squares.style.border = '1px solid cornflowerblue';
-        squares.style.width = 'auto'
-        squares.style.height = 'auto'
-        squares.style.flexGrow = '1';
+        makeSquares(num, rectangle)
+    }
+}
+
+const makeSquares = (num, object) => {
+    for (let i = 1; i <= num; i++) {
+        const squares = document.createElement('div');
+        squares.style.flex = '1';
         randomColor(squares)
         darkenColor(squares)
-        rectangle.appendChild(squares)
-    } 
-}
+        object.appendChild(squares)
+    }
 }
 
 function checkInput(num) {
